@@ -78,16 +78,19 @@ guesses_left = 3
 puts "Begin your" + " " + guesses_left.to_s + " " + "guesses!"
 
 secret_number = 5
-secret_number = secret_number.to_s
+
 
 puts prompt = "What is your guess?"
 guess = gets.chomp.to_i
 
-if secret_number == guess
-	puts "Congratualtions, you won the game!"
-end
+	if guess == secret_number
+	puts "Congratualtions you won the game"
+	exit
+	end
+		
 
-while guess != secret_number && guesses_left >= 0 do
+
+while guesses_left > 0
 	guesses_left = guesses_left - 1
 
 	if guesses_left == 0
